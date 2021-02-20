@@ -36,8 +36,10 @@ namespace Editor_de_codigo
             this.Nuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.Abrir = new System.Windows.Forms.ToolStripMenuItem();
             this.Guardar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Salir = new System.Windows.Forms.ToolStripMenuItem();
             this.edicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Deshacer = new System.Windows.Forms.ToolStripMenuItem();
+            this.Rehacer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Copiar = new System.Windows.Forms.ToolStripMenuItem();
             this.Cortar = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,9 +47,10 @@ namespace Editor_de_codigo
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SeleccionarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.EliminarTodo = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Estilos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Formato = new System.Windows.Forms.ToolStripMenuItem();
+            this.Fuente = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +63,9 @@ namespace Editor_de_codigo
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.edicionToolStripMenuItem});
+            this.edicionToolStripMenuItem,
+            this.Estilos,
+            this.Formato});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -72,7 +77,8 @@ namespace Editor_de_codigo
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Nuevo,
             this.Abrir,
-            this.Guardar});
+            this.Guardar,
+            this.Salir});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -101,10 +107,19 @@ namespace Editor_de_codigo
             this.Guardar.Text = "Guardar";
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
+            // Salir
+            // 
+            this.Salir.Name = "Salir";
+            this.Salir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.Salir.Size = new System.Drawing.Size(158, 22);
+            this.Salir.Text = "Salir";
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
             // edicionToolStripMenuItem
             // 
             this.edicionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Deshacer,
+            this.Rehacer,
             this.toolStripSeparator1,
             this.Copiar,
             this.Cortar,
@@ -122,6 +137,15 @@ namespace Editor_de_codigo
             this.Deshacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.Deshacer.Size = new System.Drawing.Size(209, 22);
             this.Deshacer.Text = "Deshacer";
+            this.Deshacer.Click += new System.EventHandler(this.Deshacer_Click);
+            // 
+            // Rehacer
+            // 
+            this.Rehacer.Name = "Rehacer";
+            this.Rehacer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.Rehacer.Size = new System.Drawing.Size(209, 22);
+            this.Rehacer.Text = "Reshacer";
+            this.Rehacer.Click += new System.EventHandler(this.Rehacer_Click);
             // 
             // toolStripSeparator1
             // 
@@ -131,9 +155,10 @@ namespace Editor_de_codigo
             // Copiar
             // 
             this.Copiar.Name = "Copiar";
-            this.Copiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.Copiar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.Copiar.Size = new System.Drawing.Size(209, 22);
             this.Copiar.Text = "Copiar";
+            this.Copiar.Click += new System.EventHandler(this.Copiar_Click);
             // 
             // Cortar
             // 
@@ -141,13 +166,15 @@ namespace Editor_de_codigo
             this.Cortar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.Cortar.Size = new System.Drawing.Size(209, 22);
             this.Cortar.Text = "Cortar";
+            this.Cortar.Click += new System.EventHandler(this.Cortar_Click);
             // 
             // Pegar
             // 
             this.Pegar.Name = "Pegar";
-            this.Pegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.Pegar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.Pegar.Size = new System.Drawing.Size(209, 22);
             this.Pegar.Text = "Pegar";
+            this.Pegar.Click += new System.EventHandler(this.Pegar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -160,6 +187,7 @@ namespace Editor_de_codigo
             this.SeleccionarTodo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.SeleccionarTodo.Size = new System.Drawing.Size(209, 22);
             this.SeleccionarTodo.Text = "Seleccionar todo ";
+            this.SeleccionarTodo.Click += new System.EventHandler(this.SeleccionarTodo_Click);
             // 
             // EliminarTodo
             // 
@@ -168,6 +196,7 @@ namespace Editor_de_codigo
             | System.Windows.Forms.Keys.X)));
             this.EliminarTodo.Size = new System.Drawing.Size(209, 22);
             this.EliminarTodo.Text = "Eliminar todo";
+            this.EliminarTodo.Click += new System.EventHandler(this.EliminarTodo_Click);
             // 
             // richTextBox1
             // 
@@ -179,6 +208,28 @@ namespace Editor_de_codigo
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
+            // Estilos
+            // 
+            this.Estilos.Name = "Estilos";
+            this.Estilos.Size = new System.Drawing.Size(52, 20);
+            this.Estilos.Text = "Estilos";
+            this.Estilos.Click += new System.EventHandler(this.Estilos_Click);
+            // 
+            // Formato
+            // 
+            this.Formato.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Fuente});
+            this.Formato.Name = "Formato";
+            this.Formato.Size = new System.Drawing.Size(64, 20);
+            this.Formato.Text = "Formato";
+            // 
+            // Fuente
+            // 
+            this.Fuente.Name = "Fuente";
+            this.Fuente.Size = new System.Drawing.Size(180, 22);
+            this.Fuente.Text = "Fuente";
+            this.Fuente.Click += new System.EventHandler(this.Fuente_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +239,7 @@ namespace Editor_de_codigo
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Olympus Code";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -212,9 +264,12 @@ namespace Editor_de_codigo
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem SeleccionarTodo;
         private System.Windows.Forms.ToolStripMenuItem EliminarTodo;
-        private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem Salir;
+        private System.Windows.Forms.ToolStripMenuItem Rehacer;
+        private System.Windows.Forms.ToolStripMenuItem Estilos;
+        private System.Windows.Forms.ToolStripMenuItem Formato;
+        private System.Windows.Forms.ToolStripMenuItem Fuente;
     }
 }
 

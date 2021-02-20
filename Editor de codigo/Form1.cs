@@ -21,7 +21,8 @@ namespace Editor_de_codigo
 
         private void Nuevo_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.Clear();
+            Archivo = null;
         }
 
         private void Abrir_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace Editor_de_codigo
                 using (StreamReader A = new StreamReader(Archivo)) {
                     richTextBox1.Text = A.ReadToEnd();
                 }
+               
             }
         }
 
@@ -71,6 +73,63 @@ namespace Editor_de_codigo
                 }
 
             
+            }
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Deshacer_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Undo();
+        }
+
+        private void Rehacer_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Redo();
+        }
+
+        private void Copiar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void Cortar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void Pegar_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
+        }
+
+        private void SeleccionarTodo_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
+
+        private void EliminarTodo_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
+        private void Estilos_Click(object sender, EventArgs e)
+        {
+            ColorDialog color = new ColorDialog();
+            if (color.ShowDialog()==DialogResult.OK) {
+                richTextBox1.ForeColor = color.Color;
+            }
+        }
+
+        private void Fuente_Click(object sender, EventArgs e)
+        {
+            FontDialog fuente = new FontDialog();
+            
+            if (fuente.ShowDialog()==DialogResult.OK) {
+                richTextBox1.Font = fuente.Font;
             }
         }
     }
