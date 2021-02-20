@@ -66,6 +66,7 @@ namespace Editor_de_codigo
                     Archivo = SaveFile.FileName;
                     using (StreamWriter g= new StreamWriter(SaveFile.FileName)) {
                         g.Write(richTextBox1.Text);
+                        
                     }
                 }
 
