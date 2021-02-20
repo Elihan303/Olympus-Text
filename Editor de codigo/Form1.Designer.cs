@@ -215,7 +215,6 @@ namespace Editor_de_codigo
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-
     }
 }
 
