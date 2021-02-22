@@ -47,10 +47,10 @@ namespace Editor_de_codigo
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SeleccionarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.EliminarTodo = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Estilos = new System.Windows.Forms.ToolStripMenuItem();
             this.Formato = new System.Windows.Forms.ToolStripMenuItem();
             this.Fuente = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,16 +198,6 @@ namespace Editor_de_codigo
             this.EliminarTodo.Text = "Eliminar todo";
             this.EliminarTodo.Click += new System.EventHandler(this.EliminarTodo_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(800, 426);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            // 
             // Estilos
             // 
             this.Estilos.Name = "Estilos";
@@ -226,9 +216,19 @@ namespace Editor_de_codigo
             // Fuente
             // 
             this.Fuente.Name = "Fuente";
-            this.Fuente.Size = new System.Drawing.Size(180, 22);
+            this.Fuente.Size = new System.Drawing.Size(110, 22);
             this.Fuente.Text = "Fuente";
             this.Fuente.Click += new System.EventHandler(this.Fuente_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(800, 426);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
@@ -240,7 +240,7 @@ namespace Editor_de_codigo
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Olympus Code";
+            this.Text = "Olympus Text";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
