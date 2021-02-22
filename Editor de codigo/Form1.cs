@@ -27,11 +27,7 @@ namespace Editor_de_codigo
 
         private void Abrir_Click(object sender, EventArgs e)
         {
-            /*String A;
-            openFileDialog1.ShowDialog();
-            System.IO.StreamReader archivo = new System.IO.StreamReader(openFileDialog1.FileName);
-            A = archivo.ReadLine();
-            richTextBox1.Text = A.ToString();*/
+           
             OpenFileDialog OpenFile = new OpenFileDialog();
             OpenFile.Filter = "Texto|*.txt";
             if (OpenFile.ShowDialog()==DialogResult.OK)
@@ -46,14 +42,7 @@ namespace Editor_de_codigo
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            /*saveFileDialog1.FileName = "Sin titulo.txt";
-            var guardar = saveFileDialog1.ShowDialog();
-            if (guardar == DialogResult.OK) {
-                using (var guardar_archivo = new StreamReader(saveFileDialog1.FileName)) 
-                {
-                    guardar_archivo.ReadToEnd(richTextBox1.Text);
-                }
-            }*/
+           
             SaveFileDialog SaveFile = new SaveFileDialog();
             SaveFile.Filter = "Texto|*.txt";
             if (Archivo != null)
